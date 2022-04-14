@@ -1,6 +1,5 @@
 import { createTheme } from "@mui/material/styles";
 import { amber, grey } from "@mui/material/colors";
-import { useState } from "react";
 
 const light = {
   // palette values for light mode
@@ -30,17 +29,11 @@ const dark = {
   },
 };
 
-const getDesignTokens = (mode) =>
-  createTheme({
+export default function getDesignTokens(mode) {
+  return createTheme({
     palette: {
       type: mode,
       ...(mode === "light" ? light : dark),
     },
   });
-
-function useTheme(initialMode) {
-  const [mode, setMode] = useState(initialMode);
-  return [getDesignTokens(mode), setMode];
 }
-
-export { useTheme };
