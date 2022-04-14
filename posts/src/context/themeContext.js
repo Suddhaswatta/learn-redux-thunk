@@ -2,7 +2,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import React, { useState } from "react";
 import getDesignTokens from "../constants/theme";
 export const CustomThemeContext = React.createContext({
-  currentTheme: "normal",
+  currentTheme: "light",
   setTheme: null,
 });
 
